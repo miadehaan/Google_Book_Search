@@ -1,15 +1,28 @@
 import React from 'react';
 import './App.css';
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Search from "./pages/Search";
+import Saved from "./pages/Saved";
 
 function App() {
   return (
-    <div>
-      <Header />
+    <Router>
+      <div>
+        <Header />
+        <Switch>
+          <Route exact path="/">
+            <Search />
+          </Route>
+          <Route path="/saved">
+            <Saved />
+          </Route>
+        </Switch>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
