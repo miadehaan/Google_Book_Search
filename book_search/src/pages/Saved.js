@@ -3,7 +3,7 @@ import React from 'react';
 function Saved() {
     return (
         <div>
-            <h1> Saved Books </h1>
+            <h2> Saved Books </h2>
         </div>
     );
 }
