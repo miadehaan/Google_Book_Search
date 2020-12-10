@@ -25,7 +25,7 @@ function Search() {
     function googleAPI(input) {
         API.getGoogleBook(input)
         .then(res => {
-            console.log(res);
+            // console.log(res);
 
             if (res.data.length === 0) {
                 throw new Error("No results found");
@@ -48,7 +48,9 @@ function Search() {
         console.log(search);
 
         googleAPI(search);
-        setSearch("");
+
+        // console.log(results);
+        // setSearch("");
     };
 
     return (
@@ -60,7 +62,7 @@ function Search() {
                 handleInputChange={handleInputChange}
                 results={search}
             />
-            <SearchResults books={results} />
+            <SearchResults books={results} searched={search}/>
             
         </div>
     );
