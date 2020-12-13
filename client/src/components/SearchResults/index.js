@@ -23,7 +23,7 @@ function SearchResults(props) {
             
             {props.books.map( (res, index) => {
                 let id = index+1;
-                let imgLink = res.volumeInfo.imageLinks.thumbnail;
+                // let imgLink = res.volumeInfo.imageLinks.thumbnail;
 
                 return (
                     <Card key={id} className="resultsContainer" border="dark">

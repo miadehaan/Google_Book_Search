@@ -7,13 +7,6 @@ function Search() {
     // state variable
     const [search, setSearch] = useState("");
     const [results, setResults] = useState([]);
-    // const [results, setResults] = useState({
-    //     title: "",
-    //     authors: [],
-    //     image: "",
-    //     link: ""
-    // })
-
 
     // didMount:
     // useEffect(() => {
@@ -40,7 +33,7 @@ function Search() {
 
     const handleInputChange = event => {
         setSearch(event.target.value);
-
+        googleAPI(search);
     };
     
     const handleFormSubmit = event => {

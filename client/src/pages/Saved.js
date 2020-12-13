@@ -31,14 +31,13 @@ function Saved() {
             <h2> Saved Books </h2>
 
             {books.map( (res, index) => {
-                let id = index+1;
                 return (
-                    <Card key={id} className="resultsContainer" border="dark">
+                    <Card key={res._id} className="resultsContainer" border="dark">
                         <Card.Body>
                             <Card.Title> 
                                 Title: {res.title} 
                                 <div className="deleteBtn btn" title="Delete Book"
-                                    onClick={() => handleDeleteBook(id)} > 
+                                    onClick={() => handleDeleteBook(res._id)} > 
                                     <i className="fa fa-trash"></i> 
                                 </div>
                             </Card.Title>
