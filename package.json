@@ -2,6 +2,9 @@
   "name": "google_books",
   "homepage": "http://miadehaan.github.io/Google_Book_Search",
   "version": "1.0.0",
+  "engines": {
+    "node": "12.x"
+  },
   "description": "Google Book Search",
   "main": "server.js",
   "scripts": {
