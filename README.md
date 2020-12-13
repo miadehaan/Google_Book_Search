@@ -7,7 +7,7 @@
 This application utilizes React JS.
 This application is deployed using Github.
 
-Deployed Application: https://git.heroku.com/radiant-plains-96143.git
+Deployed Application: https://radiant-plains-96143.herokuapp.com/
 
 Github Repository: https://github.com/miadehaan/Google_Book_Search
 
