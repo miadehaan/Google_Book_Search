@@ -23,6 +23,7 @@ function Saved() {
     function handleDeleteBook(id) {
         API.deleteBook(id)
         .then(res => loadBooks() )
+        .then(res => alert("This book has been deleted!"))
         .catch(err => console.log(err));
     }
 
@@ -30,7 +31,7 @@ function Saved() {
         <div>
             <h2> Saved Books </h2>
 
-            {books.map( (res, index) => {
+            {books.map( res => {
                 return (
                     <Card key={res._id} className="resultsContainer" border="dark">
                         <Card.Body>
@@ -45,7 +46,7 @@ function Saved() {
                             <Card.Text>
                                 Description: {res.description}
                             </Card.Text>
-                            {/* <Card.Img src={res.image} >  </Card.Img> */}
+                            {/* <Card.Img src={res.image} > <span>  </span>  </Card.Img> */}
                             <Card.Link href={res.link} > {res.title} </Card.Link>
                         </Card.Body>
                     </Card>

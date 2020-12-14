@@ -4,7 +4,7 @@ import { Card } from "react-bootstrap";
 import API from "../../utils/API";
 
 function SearchResults(props) {
-    // console.log(props.books);
+    console.log(props.books);
     
     // When the form is submitted, use the API.saveBook method to save the book data
     // Then reload books from the database
@@ -13,6 +13,7 @@ function SearchResults(props) {
 
         API.saveBook(saveBook)
         .then(res => console.log("Book successfully saved!") )
+        .then(res => alert("This book has been saved!"))
         .catch(err => console.log(err));
     }
     
@@ -23,7 +24,6 @@ function SearchResults(props) {
             
             {props.books.map( (res, index) => {
                 let id = index+1;
-                // let imgLink = res.volumeInfo.imageLinks.thumbnail;
 
                 return (
                     <Card key={id} className="resultsContainer" border="dark">
@@ -45,7 +45,7 @@ function SearchResults(props) {
                             <Card.Text>
                                 Description: {res.volumeInfo.description}
                             </Card.Text>
-                            {/* <Card.Img variant="top" src={require(imgLink)} >  </Card.Img> */}
+                            {/* <Card > <img src={res.volumeInfo.imageLinks.thumbnail} alt="book image"> </img> </Card> */}
                             <Card.Link href={res.volumeInfo.infoLink} > {res.volumeInfo.title} </Card.Link>
                         </Card.Body>
                     </Card>
