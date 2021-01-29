@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import SearchForm from "../components/SearchForm";
 import SearchResults from "../components/SearchResults";
 import API from "../utils/API";
+import bg from "../assets/unsplashImg.jpg";
 
 function Search() {
     // state variable
@@ -47,14 +48,26 @@ function Search() {
     };
 
     return (
-        <div>
-            <h2> Search for a Book </h2>
+        <div >
         
-            <SearchForm 
-                handleFormSubmit={handleFormSubmit}
-                handleInputChange={handleInputChange}
-                results={search}
-            />
+            <div style={{  
+                backgroundImage: `url(${bg})`, 
+                height: '200px', 
+                width: '100vw',
+                backgroundRepeat: 'no-repeat',
+                backgroundAttachment: 'fixed',
+                backgroundPosition: 'center',
+                backgroundSize: 'cover'
+                
+            }}
+            >
+                <SearchForm 
+                    handleFormSubmit={handleFormSubmit}
+                    handleInputChange={handleInputChange}
+                    results={search}
+                />
+            </div>
+
             <SearchResults books={results} searched={search}/>
             
         </div>

@@ -8,3 +8,15 @@ h2, h3 {
     margin: 20px;
     padding-top: 20px;
 }
+
+.bookPhoto {
+    margin: 10px auto 10px auto;
+    width: 150px;
+    height: auto;
+    display: block;
+    padding-top: 40px;
+}
+
+.bookPhoto:hover {
+    transform: scale(1.25);
+}

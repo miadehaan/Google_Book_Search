@@ -2,6 +2,7 @@ import React from 'react';
 import "./style.css";
 import { Card } from "react-bootstrap";
 import API from "../../utils/API";
+import ReactTextCollapse from "react-text-collapse";
 
 function SearchResults(props) {
     console.log(props.books);
@@ -17,10 +18,25 @@ function SearchResults(props) {
         .catch(err => console.log(err));
     }
     
+    const TEXT_COLLAPSE_OPTIONS = {
+        collapse: true, // default state when component rendered
+        collapseText: "... show more", // text to show when collapsed
+        expandText: "show less", // text to show when expanded
+        minHeight: 80, // component height when closed
+        maxHeight: 150,
+        textStyle: {
+            // pass the css for the collapseText and expandText here
+            color: "blue",
+            fontSize: "16px",
+        },
+    };
+    
 
     return (
-        <div>
-            <h3>Results for: {props.searched}</h3>
+        <div className="container">
+            {/* <div className="row">
+                <h3 style={{ fontFamily: ' "Gloria Hallelujah", cursive '}}>Results for: {props.searched}</h3>
+            </div> */}
             
             {props.books.map( (res, index) => {
                 let id = index+1;
@@ -28,25 +44,46 @@ function SearchResults(props) {
                 return (
                     <Card key={id} className="resultsContainer" border="dark">
                         <Card.Body>
-                            <Card.Title>
-                                Title: {res.volumeInfo.title} 
-                                <div className="saveBtn btn" title="Save Book"
-                                    onClick={() => handleSaveBook({            
-                                        title: res.volumeInfo.title,
-                                        authors: res.volumeInfo.authors,
-                                        description: res.volumeInfo.description,
-                                        image: res.volumeInfo.imageLinks.thumbnail,
-                                        link: res.volumeInfo.infoLink
-                                    })} > 
-                                    <i className="fa fa-save"></i> 
+                            <div className="container">
+                                <div className="row">
+                                    <div className="col-sm-6 col-12">
+                                        <Card.Title>
+                                            Title: {res.volumeInfo.title} 
+                                            <div className="saveBtn btn" title="Save Book"
+                                                onClick={() => handleSaveBook({            
+                                                    title: res.volumeInfo.title,
+                                                    authors: res.volumeInfo.authors,
+                                                    description: res.volumeInfo.description,
+                                                    image: res.volumeInfo.imageLinks.thumbnail,
+                                                    link: res.volumeInfo.infoLink
+                                                })} > 
+                                                <i className="fa fa-save"></i> 
+                                            </div>
+                                        </Card.Title>
+                                        <Card.Subtitle className="mb-2 text-muted">Authors: {res.volumeInfo.authors}</Card.Subtitle>
+                                        <Card.Text>
+                                            <ReactTextCollapse options={TEXT_COLLAPSE_OPTIONS}> 
+                                                Description: {res.volumeInfo.description}
+                                            </ReactTextCollapse>
+                                        </Card.Text>
+                                        <div style={{ marginTop: '80px' }}>
+                                            <Card.Link href={res.volumeInfo.infoLink} style={{ position: 'absolute', bottom: '0', left: '0' }} > 
+                                                Check it out on Google
+                                            </Card.Link>
+                                        </div>
+
+                                    </div>
+
+                                    <div className="col-sm-6 col-12">
+                                        <img 
+                                            className="bookPhoto"
+                                            src={res.volumeInfo.imageLinks.thumbnail} 
+                                            alt={res.title}
+                                        />
+                                    </div>
+                                        
                                 </div>
-                            </Card.Title>
-                            <Card.Subtitle className="mb-2 text-muted">Authors: {res.volumeInfo.authors}</Card.Subtitle>
-                            <Card.Text>
-                                Description: {res.volumeInfo.description}
-                            </Card.Text>
-                            {/* <Card > <img src={res.volumeInfo.imageLinks.thumbnail} alt="book image"> </img> </Card> */}
-                            <Card.Link href={res.volumeInfo.infoLink} > {res.volumeInfo.title} </Card.Link>
+                            </div>
                         </Card.Body>
                     </Card>
 

@@ -1,28 +1,35 @@
 import React from 'react';
 import "./style.css";
-import { Form, Button } from "react-bootstrap";
+import { InputGroup, FormControl, Button } from "react-bootstrap";
 
 function SearchForm(props) {
 
     return (
-        <Form className="searchContainer">
-            <div className="searchContents">
-                <Form.Group controlId="formBasicEmail">
-                    <Form.Label>Search for a book</Form.Label>
-                    <Form.Control 
-                        type="book" 
-                        placeholder="Title" 
-                        value={props.search}
-                        onChange={props.handleInputChange}
-                        name="search"
-                    />
-                </Form.Group>
-
-                <Button variant="primary" type="submit" onClick={props.handleFormSubmit}>
-                    Submit
-                </Button>
+        <div className="container">
+            <div className="row">
+                <div className="col-2" />
+                <div className="col-8">
+                    <InputGroup className="searchContainer" >
+                        <FormControl
+                            type="book" 
+                            placeholder="Title" 
+                            value={props.search}
+                            onChange={props.handleInputChange}
+                            name="search"
+                            aria-label="Recipient's username"
+                            aria-describedby="basic-addon2"
+                        />
+                        <InputGroup.Append>
+                            <Button variant="dark" type="submit" onClick={props.handleFormSubmit}>
+                                Submit
+                            </Button>
+                        </InputGroup.Append>
+                    </InputGroup>
+                </div>
+                <div className="col-2" />
             </div>
-        </Form>
+        </div>
+        
     );
 }
 

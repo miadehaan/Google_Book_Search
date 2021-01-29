@@ -1,7 +1,6 @@
 .searchContainer{
-    margin: 20px;
-    border: 1px solid black;
-    border-radius: 8px;
+    margin-top: 60px;
+    margin-bottom: 100px;
 }
 
 .searchContents{
