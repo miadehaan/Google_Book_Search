@@ -7,9 +7,9 @@ function Saved() {
     const [books, setBooks] = useState([]);
 
     // Load all books and store them with setBooks
-    // useEffect(() => {
-    //     loadBooks()
-    // }, [])
+    useEffect(() => {
+        loadBooks()
+    }, [])
 
     // API call to database
     function loadBooks() {
@@ -29,7 +29,7 @@ function Saved() {
 
     return (
         <div>
-            <h2 style={{ fontFamily: ' "Gloria Hallelujah", cursive '}}> Saved Books </h2>
+            <h2 style={{ fontFamily: ' "Gloria Hallelujah", cursive ', textAlign: 'center', margin: '20px'}}> Saved Books </h2>
 
             {books.map( res => {
                 return (
