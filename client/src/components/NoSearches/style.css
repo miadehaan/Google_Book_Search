@@ -1,0 +1,9 @@
+.noResultsContainer {
+    height: 100vh;
+    color: white;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+.noResultsContainer h1 {
+    text-align: center;
+}

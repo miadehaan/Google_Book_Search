@@ -3,6 +3,7 @@ import SearchForm from "../components/SearchForm";
 import SearchResults from "../components/SearchResults";
 import API from "../utils/API";
 import bg from "../assets/unsplashImg.jpg";
+import NoSearches from "../components/NoSearches";
 
 function Search() {
     // state variable
@@ -48,28 +49,32 @@ function Search() {
     };
 
     return (
-        <div >
+        <div style={{  
+            backgroundImage: `url(${bg})`, 
+            height: '100%', 
+            width: '100vw',
+            backgroundRepeat: 'no-repeat',
+            backgroundAttachment: 'fixed',
+            backgroundPosition: 'center',
+            backgroundSize: 'cover'
+            
+        }}>
         
-            <div style={{  
-                backgroundImage: `url(${bg})`, 
-                height: '200px', 
-                width: '100vw',
-                backgroundRepeat: 'no-repeat',
-                backgroundAttachment: 'fixed',
-                backgroundPosition: 'center',
-                backgroundSize: 'cover'
-                
-            }}
-            >
+            <div style={{ paddingBottom: '200px'}}>
                 <SearchForm 
                     handleFormSubmit={handleFormSubmit}
                     handleInputChange={handleInputChange}
                     results={search}
                 />
-            </div>
-
-            <SearchResults books={results} searched={search}/>
             
+            { search === "" ? 
+            (                
+                <NoSearches />
+            ) : (
+                <SearchResults books={results} searched={search}/>
+            )}
+                
+            </div>   
         </div>
     );
 }
