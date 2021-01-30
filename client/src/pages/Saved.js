@@ -33,7 +33,7 @@ function Saved() {
         <div style={{  
             backgroundImage: `url(${bg})`, 
             height: '100%', 
-            width: '100vw',
+            // width: '100vw',
             backgroundRepeat: 'no-repeat',
             backgroundAttachment: 'fixed',
             backgroundPosition: 'center',
