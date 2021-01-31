@@ -50,8 +50,6 @@ function Saved() {
                     Saved Books 
             </h2>
 
-            <div style={{  }} className="container frosted">
-                <div className="row">
                     { books.length === 0 ? 
                         (
                             <NoSearches />
@@ -59,32 +57,31 @@ function Saved() {
                             <>
                             {books.map( res => {
                                 return (
-                                    <Card key={res._id} className="resultsContainer" style={{ background: 'none', border: 'none'}}>
-                                        <Card.Body>
-                                            <Card.Title> 
-                                                Title: {res.title} 
-                                                <div className="deleteBtn btn" title="Delete Book"
-                                                    onClick={() => handleDeleteBook(res._id)} > 
-                                                    <i className="fa fa-trash"></i> 
-                                                </div>
-                                            </Card.Title>
-                                            <Card.Subtitle className="mb-2 text-muted">Authors: {res.authors}</Card.Subtitle>
-                                            <Card.Text>
-                                                Description: {res.description}
-                                            </Card.Text>
-                                            <Card.Img src={res.image} style={{ width: '100px'}} />
-                                            <Card.Link href={res.link} > {res.title} </Card.Link>
-                                        </Card.Body>
-                                        <hr />
-                                    </Card>
+                                    <div className="container frosted">
+                                        <Card key={res._id} className="resultsContainer" style={{ background: 'none', border: 'none'}}>
+                                            <Card.Body>
+                                                <Card.Title> 
+                                                    Title: {res.title} 
+                                                    <div className="deleteBtn btn" title="Delete Book"
+                                                        onClick={() => handleDeleteBook(res._id)} > 
+                                                        <i className="fa fa-trash"></i> 
+                                                    </div>
+                                                </Card.Title>
+                                                <Card.Subtitle className="mb-2 text-muted">Authors: {res.authors}</Card.Subtitle>
+                                                <Card.Text>
+                                                    Description: {res.description}
+                                                </Card.Text>
+                                                <Card.Img src={res.image} style={{ width: '100px'}} />
+                                                <Card.Link href={res.link} > {res.title} </Card.Link>
+                                            </Card.Body>
+                                        </Card>
+                                    </div>
                                 )
                             })} 
                             </>
                         )
 
                     }
-                </div>
-            </div>
         </div>
     );
 }

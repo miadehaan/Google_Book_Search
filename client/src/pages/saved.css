@@ -4,9 +4,12 @@
     position: relative;
     background: inherit;
     overflow: hidden;
+
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-.frosted:before{
+.frosted:after{
     content: "";
     position: absolute;
     background: inherit;
@@ -22,4 +25,5 @@
     background: none;
     color: white;
     text-shadow: 1px 1px 1px black;
+    z-index: +1;
 }
