@@ -45,8 +45,9 @@ function Saved() {
                     color: 'white', 
                     textShadow: '1px 2px 1px black',
                     textAlign: 'center', 
-                    paddingTop: '20px'}}
-                >
+                    paddingBottom: '20px'
+                }}
+            >
                     Saved Books 
             </h2>
 
