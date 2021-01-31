@@ -33,60 +33,56 @@ function SearchResults(props) {
     
 
     return (
-        <div className="container">
-                {props.books.map( (res, index) => {
-                    let id = index+1;
-                    return (
-                        <Card key={id} className="resultsContainer" border="dark">
-                            <Card.Body>
-                                <div className="container">
-                                    <div className="row">
-                                        <div className="col-sm-6 col-12">
-                                            <Card.Title>
-                                                Title: {res.volumeInfo.title} 
-                                                <div className="saveBtn btn" title="Save Book"
-                                                    onClick={() => handleSaveBook({            
-                                                        title: res.volumeInfo.title,
-                                                        authors: res.volumeInfo.authors,
-                                                        description: res.volumeInfo.description,
-                                                        image: res.volumeInfo.imageLinks.thumbnail,
-                                                        link: res.volumeInfo.infoLink
-                                                    })} > 
-                                                    <i className="fa fa-save"></i> 
-                                                </div>
-                                            </Card.Title>
-                                            <Card.Subtitle className="mb-2 text-muted">Authors: {res.volumeInfo.authors}</Card.Subtitle>
-                                            <Card.Text>
-                                                <ReactTextCollapse options={TEXT_COLLAPSE_OPTIONS}> 
-                                                    Description: {res.volumeInfo.description}
-                                                </ReactTextCollapse>
-                                            </Card.Text>
-                                            <div style={{ marginTop: '80px' }}>
-                                                <Card.Link href={res.volumeInfo.infoLink} style={{ position: 'absolute', bottom: '0', left: '0' }} > 
-                                                    Check it out on Google
-                                                </Card.Link>
-                                            </div>
-
+        <div>
+            {props.books.map( (res, index) => {
+                let id = index+1;
+                return (
+                    <div className="container">
+                    <Card key={id} className="resultsContainer" style={{backgroundColor: 'white'}}>
+                        <Card.Body>
+                            <div className="row">
+                                <div className="col-sm-6 col-12">
+                                    <Card.Title>
+                                        Title: {res.volumeInfo.title} 
+                                        <div className="saveBtn btn" title="Save Book"
+                                            onClick={() => handleSaveBook({            
+                                                title: res.volumeInfo.title,
+                                                authors: res.volumeInfo.authors,
+                                                description: res.volumeInfo.description,
+                                                image: res.volumeInfo.imageLinks.thumbnail,
+                                                link: res.volumeInfo.infoLink
+                                            })} > 
+                                            <i className="fa fa-save"></i> 
                                         </div>
-
-                                        <div className="col-sm-6 col-12">
-                                            <img 
-                                                className="bookPhoto"
-                                                src={res.volumeInfo.imageLinks.thumbnail} 
-                                                alt={res.title}
-                                            />
-                                        </div>
-                                            
+                                    </Card.Title>
+                                    <Card.Subtitle className="mb-2 text-muted">Authors: {res.volumeInfo.authors}</Card.Subtitle>
+                                    <Card.Text>
+                                        <ReactTextCollapse options={TEXT_COLLAPSE_OPTIONS}> 
+                                            Description: {res.volumeInfo.description}
+                                        </ReactTextCollapse>
+                                    </Card.Text>
+                                    <div style={{ marginTop: '80px' }}>
+                                        <Card.Link href={res.volumeInfo.infoLink} style={{ position: 'absolute', bottom: '0', left: '0' }} > 
+                                            Check it out on Google
+                                        </Card.Link>
                                     </div>
+
                                 </div>
-                            </Card.Body>
-                        </Card>
 
-                    )
-                })} 
-
+                                <div className="col-sm-6 col-12">
+                                    <img 
+                                        className="bookPhoto"
+                                        src={res.volumeInfo.imageLinks.thumbnail} 
+                                        alt={res.title}
+                                    />
+                                </div>
+                            </div>
+                        </Card.Body>
+                    </Card>
+                    </div>
+                )
+            })} 
         </div>
-
     );
 }
 

@@ -51,8 +51,7 @@ function Search() {
     return (
         <div style={{  
             backgroundImage: `url(${bg})`, 
-            height: '100%', 
-            // width: '100vw',
+            height: '100%',
             backgroundRepeat: 'no-repeat',
             backgroundAttachment: 'fixed',
             backgroundPosition: 'center',
@@ -67,12 +66,12 @@ function Search() {
                     results={search}
                 />
             
-            { search === "" ? 
-            (                
-                <NoSearches />
-            ) : (
-                <SearchResults books={results} searched={search}/>
-            )}
+                { search === "" ? 
+                (                
+                    <NoSearches />
+                ) : (
+                    <SearchResults books={results} searched={search} />
+                )}
                 
             </div>   
         </div>

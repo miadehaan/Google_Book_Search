@@ -58,7 +58,7 @@ function Saved() {
                             {books.map( res => {
                                 return (
                                     <div className="container frosted">
-                                        <Card key={res._id} className="resultsContainer" style={{ background: 'none', border: 'none'}}>
+                                        <Card key={res._id} className="savedContainer" style={{ background: 'none', border: 'none'}}>
                                             <Card.Body>
                                                 <Card.Title> 
                                                     Title: {res.title} 
