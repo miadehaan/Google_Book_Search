@@ -44,8 +44,9 @@ function Saved() {
             <h2 style={{ fontFamily: ' "Gloria Hallelujah", cursive ', 
                     color: 'white', 
                     textShadow: '1px 2px 1px black',
-                    textAlign: 'center', 
-                    paddingBottom: '20px'
+                    textAlign: 'center',
+                    paddingBottom: '20px',
+                    paddingTop: '20px'
                 }}
             >
                     Saved Books 
@@ -65,7 +66,7 @@ function Saved() {
                                                     Title: {res.title} 
                                                     <div className="deleteBtn btn" title="Delete Book"
                                                         onClick={() => handleDeleteBook(res._id)} > 
-                                                        <i className="fa fa-trash"></i> 
+                                                        <i className="fa fa-trash fa-lg" style={{ textShadow: 'none', paddingBottom: '10px' }} ></i> 
                                                     </div>
                                                 </Card.Title>
                                                 <Card.Subtitle className="mb-2 text-muted">Authors: {res.authors}</Card.Subtitle>
