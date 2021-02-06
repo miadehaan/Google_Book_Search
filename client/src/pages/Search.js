@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import SearchForm from "../components/SearchForm";
 import SearchResults from "../components/SearchResults";
 import API from "../utils/API";
@@ -30,12 +30,12 @@ function Search() {
             }
             setResults(res.data);
         })
-        .catch(err => console.log("error - not connecting to Google API"));
+        .catch(err => console.log(err));
     }
 
     const handleInputChange = event => {
         setSearch(event.target.value);
-        googleAPI(search);
+        // googleAPI(search);
     };
     
     const handleFormSubmit = event => {
@@ -44,8 +44,8 @@ function Search() {
 
         googleAPI(search);
 
-        // console.log(results);
-        // setSearch("");
+        // clear input form
+        setSearch("");
     };
 
     return (
@@ -66,7 +66,7 @@ function Search() {
                     results={search}
                 />
             
-                { search === "" ? 
+                { results.length === 0 ? 
                 (                
                     <NoSearches />
                 ) : (

@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
+import React from 'react';
 import "./style.css";
 import { Card } from "react-bootstrap";
 import API from "../../utils/API";
 import ReactTextCollapse from "react-text-collapse";
 
 function SearchResults(props) {
-    console.log(props.books);
+    // console.log(props.books);
     
     // When the form is submitted, use the API.saveBook method to save the book data
     // Then reload books from the database
@@ -37,14 +37,14 @@ function SearchResults(props) {
             {props.books.map( (res, index) => {
                 let id = index+1;
                 return (
-                    <div className="container">
-                    <Card key={id} className="resultsContainer" style={{backgroundColor: 'white'}}>
-                        <Card.Body>
+                    <div key={id} className="container">
+                    <Card className="resultsContainer" style={{backgroundColor: 'white'}}>
+                        <Card.Body as="div">
                             <div className="row">
                                 <div className="col-sm-6 col-12">
                                     <Card.Title>
                                         Title: {res.volumeInfo.title} 
-                                        <div className="saveBtn btn" title="Save Book"
+                                        <span className="saveBtn btn" title="Save Book"
                                             onClick={() => handleSaveBook({            
                                                 title: res.volumeInfo.title,
                                                 authors: res.volumeInfo.authors,
@@ -52,8 +52,8 @@ function SearchResults(props) {
                                                 image: res.volumeInfo.imageLinks.thumbnail,
                                                 link: res.volumeInfo.infoLink
                                             })} > 
-                                            <i className="fa fa-save"></i> 
-                                        </div>
+                                            <i className="fa fa-save fa-lg"></i> 
+                                        </span>
                                     </Card.Title>
                                     <Card.Subtitle className="mb-2 text-muted">Authors: {res.volumeInfo.authors}</Card.Subtitle>
                                     <Card.Text>

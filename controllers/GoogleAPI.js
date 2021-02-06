@@ -4,7 +4,8 @@ module.exports = {
     findAll: function(req, res) {
         // console.log(req);
         const { query: params } = req;
-        
+        // console.log(params);
+
         axios
         .get("https://www.googleapis.com/books/v1/volumes", {
             params

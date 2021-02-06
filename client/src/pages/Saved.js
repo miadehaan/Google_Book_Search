@@ -12,7 +12,7 @@ function Saved() {
     // Load all books and store them with setBooks
     useEffect(() => {
         loadBooks()
-    }, [])
+    });
 
     // API call to database
     function loadBooks() {
@@ -52,38 +52,38 @@ function Saved() {
                     Saved Books 
             </h2>
 
-                    { books.length === 0 ? 
-                        (
-                            <NoSearches />
-                        ) : (
-                            <>
-                            {books.map( res => {
-                                return (
-                                    <div className="container frosted">
-                                        <Card key={res._id} className="savedContainer" style={{ background: 'none', border: 'none'}}>
-                                            <Card.Body>
-                                                <Card.Title> 
-                                                    Title: {res.title} 
-                                                    <div className="deleteBtn btn" title="Delete Book"
-                                                        onClick={() => handleDeleteBook(res._id)} > 
-                                                        <i className="fa fa-trash fa-lg" style={{ textShadow: 'none', paddingBottom: '10px' }} ></i> 
-                                                    </div>
-                                                </Card.Title>
-                                                <Card.Subtitle className="mb-2 text-muted">Authors: {res.authors}</Card.Subtitle>
-                                                <Card.Text>
-                                                    Description: {res.description}
-                                                </Card.Text>
-                                                <Card.Img src={res.image} style={{ width: '100px'}} />
-                                                <Card.Link href={res.link} > {res.title} </Card.Link>
-                                            </Card.Body>
-                                        </Card>
-                                    </div>
-                                )
-                            })} 
-                            </>
-                        )
+                { books.length === 0 ? 
+                    (
+                        <NoSearches />
+                    ) : (
+                        <>
+                        {books.map( res => {
+                            return (
+                                <div className="container frosted">
+                                    <Card key={res._id} className="savedContainer" style={{ background: 'none', border: 'none'}}>
+                                        <Card.Body>
+                                            <Card.Title> 
+                                                Title: {res.title} 
+                                                <div className="deleteBtn btn" title="Delete Book"
+                                                    onClick={() => handleDeleteBook(res._id)} > 
+                                                    <i className="fa fa-trash fa-lg" style={{ textShadow: 'none', paddingBottom: '10px' }} ></i> 
+                                                </div>
+                                            </Card.Title>
+                                            <Card.Subtitle className="mb-2 text-muted">Authors: {res.authors}</Card.Subtitle>
+                                            <Card.Text>
+                                                Description: {res.description}
+                                            </Card.Text>
+                                            <Card.Img src={res.image} style={{ width: '100px'}} />
+                                            <Card.Link href={res.link} > {res.title} </Card.Link>
+                                        </Card.Body>
+                                    </Card>
+                                </div>
+                            )
+                        })} 
+                        </>
+                    )
 
-                    }
+                }
         </div>
     );
 }

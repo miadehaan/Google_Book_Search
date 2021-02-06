@@ -3,6 +3,7 @@ import "./style.css";
 import { InputGroup, FormControl, Button } from "react-bootstrap";
 
 function SearchForm(props) {
+    console.log(props);
 
     return (
         <div className="container">
@@ -13,7 +14,7 @@ function SearchForm(props) {
                         <FormControl
                             type="book" 
                             placeholder="Title" 
-                            value={props.search}
+                            value={props.results || ""}
                             onChange={props.handleInputChange}
                             name="search"
                             aria-label="Recipient's username"
