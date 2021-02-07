@@ -33,7 +33,7 @@ function Saved() {
         <div style={{  
             backgroundColor: '#1F2041',
             backgroundImage: '-webkit-linear-gradient(40deg, #FEF5EF 50%, #98B6B1 50%)',
-            paddingBottom: '150px'
+            paddingBottom: '300px'
             }}
         >
             <h2 style={{ fontFamily: ' "Gloria Hallelujah", cursive ', 

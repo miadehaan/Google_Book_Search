@@ -37,9 +37,9 @@ This app allows the user to search for any book by searching the Google Books AP
 
 ## Example
 
-![Webpage](/client/public/demo2.PNG)
-
 ![Webpage](/client/public/demo1.PNG)
+![Webpage](/client/public/demo2.PNG)
+![Webpage](/client/public/demo3.PNG)
 
     
 ## License
