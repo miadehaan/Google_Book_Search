@@ -37,7 +37,7 @@ function SearchResults(props) {
             {props.books.map( (res, index) => {
                 let id = index+1;
                 return (
-                    <div key={id} className="container">
+                    <div key={id} className="container" style={{  }}>
                     <Card className="resultsContainer" style={{backgroundColor: 'white'}}>
                         <Card.Body as="div">
                             <div className="row">

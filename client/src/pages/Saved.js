@@ -3,7 +3,6 @@ import API from "../utils/API";
 import "./saved.css";
 import { Card } from "react-bootstrap";
 import "../components/SearchResults/style.css";
-import bg from "../assets/unsplashImg.jpg";
 import NoSearches from "../components/NoSearches";
 
 function Saved() {
@@ -32,12 +31,8 @@ function Saved() {
 
     return (
         <div style={{  
-            backgroundImage: `url(${bg})`, 
-            height: '100%', 
-            backgroundRepeat: 'no-repeat',
-            backgroundAttachment: 'fixed',
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
+            backgroundColor: '#1F2041',
+            backgroundImage: '-webkit-linear-gradient(40deg, #FEF5EF 50%, #98B6B1 50%)',
             paddingBottom: '150px'
             }}
         >
@@ -54,7 +49,16 @@ function Saved() {
 
                 { books.length === 0 ? 
                     (
-                        <NoSearches />
+                        <>      
+                            <h4 style={{ fontFamily: ' "Gloria Hallelujah", cursive ', 
+                                color: 'white', 
+                                textShadow: '1px 2px 1px black',
+                                textAlign: 'center',
+                                paddingBottom: '10px',
+                                paddingTop: '50px'
+                            }}> Save new books here! </h4>    
+                            <NoSearches />
+                        </>
                     ) : (
                         <>
                         {books.map( res => {

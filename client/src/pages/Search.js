@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import SearchForm from "../components/SearchForm";
 import SearchResults from "../components/SearchResults";
 import API from "../utils/API";
-import bg from "../assets/unsplashImg.jpg";
 import NoSearches from "../components/NoSearches";
 
 function Search() {
@@ -50,13 +49,8 @@ function Search() {
 
     return (
         <div style={{  
-            backgroundImage: `url(${bg})`, 
-            height: '100%',
-            backgroundRepeat: 'no-repeat',
-            backgroundAttachment: 'fixed',
-            backgroundPosition: 'center',
-            backgroundSize: 'cover'
-            
+            backgroundColor: '#1F2041',
+            backgroundImage: '-webkit-linear-gradient(40deg, #FEF5EF 50%, #B4C5E4 50%)',
         }}>
         
             <div style={{ paddingBottom: '200px'}}>
@@ -67,8 +61,16 @@ function Search() {
                 />
             
                 { results.length === 0 ? 
-                (                
+                (   <>      
+                    <h3 style={{ fontFamily: ' "Gloria Hallelujah", cursive ', 
+                        color: 'white', 
+                        textShadow: '1px 2px 1px black',
+                        textAlign: 'center',
+                        paddingBottom: '10px',
+                        paddingTop: '10px'
+                    }}> Search for a book! </h3>    
                     <NoSearches />
+                    </>
                 ) : (
                     <SearchResults books={results} searched={search} />
                 )}

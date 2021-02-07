@@ -1,4 +1,4 @@
-.frosted {
+/* .frosted {
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
     border-radius: 12px;
     position: relative;
@@ -18,11 +18,16 @@
     bottom: 0;
     box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5);
     filter: blur(10px);
+} */
+.frosted {
+    background-color: white;
+    border: 1px solid rgba(196, 196, 196, 0.514);
+    border-radius: 8px;
+    box-shadow: 4px 4px 2px grey;
 }
 
 .savedContainer {
-    background: none;
-    color: white;
-    text-shadow: 1px 1px 1px black;
-    z-index: +1;
+    color: black;
+    /* text-shadow: 1px 1px 1px black; */
+    /* z-index: +1; */
 }
